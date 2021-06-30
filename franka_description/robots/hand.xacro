@@ -33,39 +33,33 @@
           <sphere radius="${0.04+safety_distance}"  />
         </geometry>
       </collision>
-      <collision>
-        <origin xyz="0 0 0.1" rpy="0 ${pi/2} ${pi/2}"/>
-        <geometry>
-          <cylinder radius="${0.02+safety_distance}" length="0.1" />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 -0.05 0.1" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${0.02+safety_distance}"  />
-        </geometry>
-      </collision>
-      <collision>
-        <origin xyz="0 0.05 0.1" rpy="0 0 0"/>
-        <geometry>
-          <sphere radius="${0.02+safety_distance}"  />
-        </geometry>
-      </collision>
     </link>
     <link name="${ns}_leftfinger">
       <visual>
         <geometry>
-          <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
+          <mesh filename="package://franka_description/meshes/visual/Finger_Robothon_3.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
+      <collision>
+        <origin xyz="-0.0045 0.0045 0.05" rpy="${pi/2} ${pi} 0"/>
+        <geometry>
+          <mesh filename="package://franka_description/meshes/collision/Finger_Robothon_3l.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
     </link>
     <link name="${ns}_rightfinger">
       <visual>
         <origin xyz="0 0 0" rpy="0 0 ${pi}"/>
         <geometry>
-          <mesh filename="package://franka_description/meshes/visual/finger.dae"/>
+          <mesh filename="package://franka_description/meshes/visual/Finger_Robothon_3.dae" scale="0.001 0.001 0.001"/>
         </geometry>
       </visual>
+      <collision>
+       <origin xyz="0.0045 -0.0045 0.05" rpy="${pi/2} ${pi} ${pi}"/>
+        <geometry>
+          <mesh filename="package://franka_description/meshes/collision/Finger_Robothon_3r.stl" scale="0.001 0.001 0.001"/>
+        </geometry>
+      </collision>
    </link>
     <joint name="${ns}_finger_joint1" type="prismatic">
       <parent link="${ns}_hand"/>
