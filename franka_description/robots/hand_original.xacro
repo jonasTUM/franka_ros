@@ -42,9 +42,9 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 0.0045 0.057" rpy="0 0 0"/>
+        <origin xyz="-0.0045 0.0045 0.05" rpy="${pi/2} ${pi} 0"/>
         <geometry>
-          <box size="0.018 0.009 0.04" />
+          <mesh filename="package://franka_description/meshes/collision/Finger_Robothon_3l.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
     </link>
@@ -56,9 +56,9 @@
         </geometry>
       </visual>
       <collision>
-        <origin xyz="0.0 -0.0045 0.057" rpy="0 0 0" />
+       <origin xyz="0.0045 -0.0045 0.05" rpy="${pi/2} ${pi} ${pi}"/>
         <geometry>
-          <box size="0.018 0.009 0.04" />
+          <mesh filename="package://franka_description/meshes/collision/Finger_Robothon_3r.stl" scale="0.001 0.001 0.001"/>
         </geometry>
       </collision>
    </link>
